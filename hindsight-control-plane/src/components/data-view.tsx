@@ -120,8 +120,8 @@ export function DataView({
   const [invalidatedRows, setInvalidatedRows] = useState<any[]>([]);
   const itemsPerPage = 100;
 
-  // Fetch limit state - how many memories to load from the API
-  const [fetchLimit, setFetchLimit] = useState(1000);
+  // Load up to 10,000 memories on the initial graph request.
+  const [fetchLimit, setFetchLimit] = useState(10_000);
 
   // Which timestamp drives the constellation recency color
   type RecencyBasis = "mentioned_at" | "occurred_start" | "occurred_end";
